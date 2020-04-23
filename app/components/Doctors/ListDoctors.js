@@ -79,6 +79,8 @@ function Doctor(props) {
               marginTop: 3,
               color: "white",
               borderRadius: 20,
+              position: "absolute",
+              bottom: 0,
             }}
           >
             {speciality}

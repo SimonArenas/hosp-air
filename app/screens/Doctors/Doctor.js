@@ -3,6 +3,7 @@ import { StyleSheet, Text, ScrollView, View, Dimensions } from "react-native";
 import * as firebase from "firebase";
 import Carrousel from "../../components/Carrousel";
 import { Rating, Icon, Divider } from "react-native-elements";
+import ListReview from "../../components/Doctors/ListReview";
 
 const screenWidth = Dimensions.get("window").width;
 
@@ -11,7 +12,9 @@ const Doctor = (props) => {
   const { doctor } = navigation.state.params.doctor.item;
 
   const [imagesDoctor, setImagesDoctor] = useState([]);
-  console.log(imagesDoctor);
+  const [rating, setRating] = useState(doctor.rating);
+ 
+
 
   useEffect(() => {
     const arrayUrls = [];
@@ -39,14 +42,15 @@ const Doctor = (props) => {
         rating={doctor.rating}
         phone={doctor.phone}
         speciality={doctor.speciality}
+        rating={rating}
       />
+      <ListReview navigation={navigation} idDoctor={doctor.id} setRating={setRating}/>
     </ScrollView>
   );
 };
 
 function TitleDoctor(props) {
   const { name, description, rating, phone, speciality } = props;
-  console.log(props);
   return (
     <View style={styles.viewDoctorTitle}>
       <View styles={{ flexDirection: "row" }}>
@@ -104,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginTop: 15,
-    color: "green",
+    color: "orange",
   },
   divider: {
     backgroundColor: "#00a680",

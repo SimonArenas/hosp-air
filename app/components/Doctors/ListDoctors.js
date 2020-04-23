@@ -31,7 +31,7 @@ export default function ListDoctors(props) {
         ) : (
           <View style={styles.loaderDoctors}>
             <ActivityIndicator size="large" />
-            <Text>Cargando restaurantes</Text>
+            <Text>Cargando doctores</Text>
           </View>
         )}
       </View>
@@ -56,7 +56,7 @@ function Doctor(props) {
   });
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("Doctor", {doctor})}>
+    <TouchableOpacity onPress={() => navigation.navigate("Doctor", { doctor })}>
       <View></View>
       <View style={styles.viewDoctor}>
         <View style={styles.viewDoctorImage}>
@@ -69,7 +69,20 @@ function Doctor(props) {
         </View>
         <View>
           <Text style={styles.doctorName}>{name}</Text>
-          <Text style={styles.doctorSpeciality}>{speciality}</Text>
+          <Text
+            style={{
+              backgroundColor: "#00a680",
+              alignSelf: "flex-start",
+              paddingTop: 3,
+              paddingBottom: 5,
+              paddingHorizontal: 10,
+              marginTop: 3,
+              color: "white",
+              borderRadius: 20,
+            }}
+          >
+            {speciality}
+          </Text>
         </View>
       </View>
     </TouchableOpacity>

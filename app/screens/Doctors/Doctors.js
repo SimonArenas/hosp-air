@@ -16,7 +16,7 @@ export default function Doctors(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [totalDoctors, setTotalDoctors] = useState(0);
   const [isReloadDoctors, setIsReloadDoctors] = useState(false);
-  const limitDoctors = 25;
+  const limitDoctors = 5;
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((userInfo) => {

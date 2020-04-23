@@ -15,9 +15,7 @@ export default function ListDoctors(props) {
 
   return (
     <>
-      <View>
-        <Text>List</Text>
-      </View>
+      <View></View>
       <View>
         {doctors ? (
           <FlatList
@@ -53,12 +51,12 @@ function Doctor(props) {
       .ref(`doctores-imagenes/${image}`)
       .getDownloadURL()
       .then((result) => {
-        setImageDoctor(result)
+        setImageDoctor(result);
       });
   });
 
   return (
-    <TouchableOpacity onPress={() => console.log("ir al dcotor")}>
+    <TouchableOpacity onPress={() => navigation.navigate("Doctor", {doctor})}>
       <View></View>
       <View style={styles.viewDoctor}>
         <View style={styles.viewDoctorImage}>

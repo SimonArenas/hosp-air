@@ -16,9 +16,7 @@ export default function Doctors(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [totalDoctors, setTotalDoctors] = useState(0);
   const [isReloadDoctors, setIsReloadDoctors] = useState(false);
-  const limitDoctors = 12;
-
-  console.log("ultimo log------------: " + doctors);
+  const limitDoctors = 25;
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((userInfo) => {
@@ -31,7 +29,7 @@ export default function Doctors(props) {
       .get()
       .then((snap) => {
         setTotalDoctors(snap.size);
-        // console.log(snap.size);
+        
       });
 
       
@@ -95,7 +93,7 @@ export default function Doctors(props) {
       navigation={navigation}
       />
       {user && (
-        <AddRestaurantButton
+        <AddDoctorButton
           navigation={navigation}
           setIsReloadDoctors={setIsReloadDoctors}
 
@@ -105,14 +103,14 @@ export default function Doctors(props) {
   );
 }
 
-function AddRestaurantButton(props) {
+function AddDoctorButton(props) {
   const { navigation, setIsReloadDoctors } = props;
 
   return (
     <ActionButton
       buttonColor="#00a680"
       onPress={() =>
-        navigation.navigate("AddRestaurant", { setIsReloadDoctors })
+        navigation.navigate("AddDoctor", { setIsReloadDoctors })
       }
     />
   );

@@ -20,7 +20,9 @@ const DoctorsScreenStacks = createStackNavigator({
   Doctor: {
     screen: DoctorScreen,
     navigationOptions: (props) => ({
-      title: props.navigation.state.params.doctor.item.doctor.name,
+      // TODO: Changed
+      // title: props.navigation.state.params.doctor.item.doctor.name,
+      title: props.navigation.state.params.doctor.name,
     }),
   },
   AddReviewDoctor: {

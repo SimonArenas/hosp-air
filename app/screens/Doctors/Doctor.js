@@ -9,7 +9,9 @@ const screenWidth = Dimensions.get("window").width;
 
 const Doctor = (props) => {
   const { navigation } = props;
-  const { doctor } = navigation.state.params.doctor.item;
+  // TODO: CHANGED
+  // const { doctor } = navigation.state.params.doctor.item;
+  const { doctor } = navigation.state.params;
 
   const [imagesDoctor, setImagesDoctor] = useState([]);
   const [rating, setRating] = useState(doctor.rating);

@@ -56,19 +56,15 @@ function Doctor(props) {
   });
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("Doctor", { doctor })}>
+    <TouchableOpacity onPress={() => navigation.navigate("Doctor", { doctor: doctor.item.doctor })}>
       <View></View>
       <View style={styles.viewDoctor}>
-        <View
-          style={styles.viewDoctorImage}
-         
-        >
+        <View style={styles.viewDoctorImage}>
           <Image
             resizeMode="cover"
             source={{ uri: imageDoctor }}
             style={styles.imageDoctor}
             PlaceholderContent={<ActivityIndicator color="#fff" />}
-            
           />
         </View>
         <View>
@@ -124,8 +120,6 @@ const styles = StyleSheet.create({
   },
   viewDoctorImage: {
     marginRight: 15,
-    
-    
   },
   imageDoctor: {
     width: 80,

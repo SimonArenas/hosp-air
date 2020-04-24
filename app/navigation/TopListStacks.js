@@ -5,7 +5,7 @@ const TopListScreenStacks = createStackNavigator({
   topDoctors: {
     screen: TopDoctorsScreen,
     navigationOptions: () => ({
-      title: "Los mejores doctores",
+      title: "Los mejores doctores ⭐",
     }),
   },
 });

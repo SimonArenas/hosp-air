@@ -59,12 +59,16 @@ function Doctor(props) {
     <TouchableOpacity onPress={() => navigation.navigate("Doctor", { doctor })}>
       <View></View>
       <View style={styles.viewDoctor}>
-        <View style={styles.viewDoctorImage}>
+        <View
+          style={styles.viewDoctorImage}
+         
+        >
           <Image
             resizeMode="cover"
             source={{ uri: imageDoctor }}
             style={styles.imageDoctor}
             PlaceholderContent={<ActivityIndicator color="#fff" />}
+            
           />
         </View>
         <View>
@@ -78,7 +82,7 @@ function Doctor(props) {
               paddingHorizontal: 10,
               marginTop: 3,
               color: "white",
-              borderRadius: 20,
+              borderRadius: 5,
               position: "absolute",
               bottom: 0,
             }}
@@ -120,6 +124,8 @@ const styles = StyleSheet.create({
   },
   viewDoctorImage: {
     marginRight: 15,
+    
+    
   },
   imageDoctor: {
     width: 80,

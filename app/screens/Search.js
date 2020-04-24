@@ -4,6 +4,7 @@ import { SearchBar, ListItem, Icon, Image } from "react-native-elements";
 import { FireSQL } from "firesql";
 import firebase from "firebase/app";
 import { FlatList } from "react-native-gesture-handler";
+import { useDebouncedCallback } from "use-debounce";
 
 const fireSQL = new FireSQL(firebase.firestore(), { includeId: "id" });
 const Search = (props) => {
@@ -13,6 +14,10 @@ const Search = (props) => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
+    onSearch();
+  }, [search]);
+
+  const [onSearch] = useDebouncedCallback(() => {
     if (search) {
       fireSQL
         .query(`SELECT * FROM doctors WHERE name LIKE '${search}%'`)
@@ -20,8 +25,7 @@ const Search = (props) => {
           setDoctors(response);
         });
     }
-  }, [search]);
-
+  }, 300);
   return (
     <View>
       <SearchBar

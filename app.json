@@ -2,11 +2,7 @@
   "expo": {
     "name": "hosp-air",
     "slug": "hosp-air",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,17 +14,16 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
-      "permissions": [
-        "CAMERA_ROLL"
-      ]
+      "package": "com.simonarenas.hospair",
+      "versionCode": 1,
+      "permissions": ["CAMERA_ROLL"]
     },
+
     "description": "Aplicación creada para el hospital air y proyecto de la materia de Desarrollo de apps moviles.",
     "githubUrl": "https://github.com/SimonArenas"
   }
